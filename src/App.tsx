@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-function App() {
+import Users from "./features/Users";
+
+import "./App.css";
+import Layout from "./components/Layout";
+
+const queryClient = new QueryClient();
+
+function App(): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <QueryClientProvider client={queryClient}>
+        <Layout>
+          <Users />
+        </Layout>
+      </QueryClientProvider>
+    </>
   );
 }
 
 export default App;
+
+// TODO: clean architecture
+// TODO: craco with ts-import-plugin
+// TODO: craco with modifyVars
