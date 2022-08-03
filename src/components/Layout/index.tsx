@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Layout.style.css";
+import "./style.css";
 
 interface LayoutProps {
   children: JSX.Element[] | JSX.Element;

@@ -22,6 +22,5 @@ function App(): JSX.Element {
 
 export default App;
 
-// TODO: clean architecture
 // TODO: craco with ts-import-plugin
 // TODO: craco with modifyVars
