@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Typography } from "antd";
+import { Card, Typography, Space } from "antd";
 import {
   EditOutlined,
   HeartTwoTone,
@@ -30,10 +30,12 @@ function UserCard({
   return (
     <Card
       cover={
-        <img
-          alt="Cover"
-          src={`https://avatars.dicebear.com/v2/avataaars/${username}.svg?options[mood][]=happy`}
-        />
+        <figure>
+          <img
+            alt="User Avatar"
+            src={`https://avatars.dicebear.com/v2/avataaars/${username}.svg?options[mood][]=happy`}
+          />
+        </figure>
       }
       actions={[
         <HeartTwoTone key="heart" twoToneColor="#FF1B16" />,
@@ -44,19 +46,17 @@ function UserCard({
       <Meta
         title={name}
         description={
-          <>
+          <Space direction="vertical" size={1}>
             <Text type="secondary">
               <MailOutlined /> {email}
             </Text>
-            <br />
             <Text type="secondary">
               <PhoneOutlined /> {phone}
             </Text>
-            <br />
             <Text type="secondary">
               <GlobalOutlined /> http://{website}
             </Text>
-          </>
+          </Space>
         }
       />
     </Card>
