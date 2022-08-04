@@ -6,7 +6,9 @@ import { fetchUsers } from "../../apis/users";
 import UserCard, { UserCardSkeleton } from "../../components/UserCard";
 
 function Users(): JSX.Element {
-  const { isLoading, error, data } = useQuery(["userData"], fetchUsers);
+  const { isLoading, error, data } = useQuery(["userData"], fetchUsers, {
+    retry: false,
+  });
 
   if (isLoading) {
     return (

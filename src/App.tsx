@@ -22,5 +22,6 @@ function App(): JSX.Element {
 
 export default App;
 
+// TODO: CI & CD Pipelines
 // TODO: craco with ts-import-plugin
 // TODO: craco with modifyVars
